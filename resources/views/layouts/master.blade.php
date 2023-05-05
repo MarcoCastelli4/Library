@@ -26,6 +26,13 @@
                 <ul class="navbar-nav col-lg-6">
                     @yield('left_navbar')
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if($logged)
+                    <li><i>Welcome {{$loggedName}}</i><a class="btn btn-outline-dark" href="{{route('user.logout')}}">Logout</a></li>
+                    @else
+                    <li><a class="btn btn-outline-dark" href="{{route('user.login')}}">Login</a></li>
+                    @endif
+                </ul>
             </div>
         </div>
     </nav>

@@ -10,9 +10,10 @@ class BookController extends Controller
 {
     public function index()
     {
+        
         $dl = new DataLayer();
         $books = $dl->listBooks();
-        return view('book.books')->with('books_list',$books);
+        return view('book.books')->with('logged', true)->with('loggedName', $_SESSION["loggedName"])->with('books_list',$books);
     }
 
     public function create()

@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function authors() {
+        // the property $user->authors returns an array of Authors
+        return $this->hasMany(Author::class);
+    }    
+    
+    public function books() {
+        // the property $user->books returns an array of Books
+        return $this->hasMany(Book::class);
+    }
 }
